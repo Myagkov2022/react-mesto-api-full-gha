@@ -1,0 +1,33 @@
+.form__submit {
+    width: 100%;
+    background: var(--black-color);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: var(--white-color);
+    padding: 16px 125px;
+    border-radius: 2px;
+    border: none;
+    transition: 0.3s ease-in;
+    margin-top: 13px;
+}
+
+.form__submit:hover {
+    background-color: rgba(0,0,0,.8);
+}
+
+.form__submit:disabled {
+    opacity: 0.2;
+    color: var(--black-color);
+    border: 1px solid  var(--black-color);
+    background-color:  var(--white-color);
+}
+
+@media screen and (max-width: 500px) {
+    .form__submit {
+        padding: 14px 82px;
+        font-size: 14px;
+        line-height: 17px;
+    }
+}

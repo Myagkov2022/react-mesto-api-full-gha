@@ -1,0 +1,6 @@
+.popup__signup-title {
+    color: var(--black-color);
+    text-align: center;
+    font-size: 24px;
+    font-weight: 900;
+}

@@ -1,0 +1,7 @@
+.auth__title {
+    color: var(--white-color);
+    text-align: center;
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 50px;
+}

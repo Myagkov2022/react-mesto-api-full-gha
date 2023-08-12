@@ -1,0 +1,5 @@
+.auth__container {
+    max-width: 358px;
+    min-height: calc(100vh - 291px);
+    margin: 0 auto;
+}

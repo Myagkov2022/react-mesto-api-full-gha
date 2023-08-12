@@ -1,0 +1,7 @@
+.auth__button {
+    color: var(--white-color);
+    text-align: center;
+    font-size: 14px;
+    text-decoration: none;
+    margin-top: 15px;
+}
