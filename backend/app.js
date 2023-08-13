@@ -15,7 +15,11 @@ app.use(router);
 app.use(errorLogger);
 app.use(errors());
 app.use(errorsHandler);
-mongoose.connect('mongodb://localhost:27017/mestodb', {});
+mongoose.connect('mongodb://localhost:27017/mestodb', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  family: 4,
+});
 
 app.listen(PORT, () => {
   console.log(`Server is listening ${PORT} port`);
