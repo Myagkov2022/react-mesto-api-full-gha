@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Link, useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 
 const Register = ({handleRegister}) => {
@@ -7,7 +7,6 @@ const Register = ({handleRegister}) => {
         email: '',
         password: ''
     })
-    const navigate = useNavigate();
 
     const handleChange = (e) => {
         const {name, value} = e.target;

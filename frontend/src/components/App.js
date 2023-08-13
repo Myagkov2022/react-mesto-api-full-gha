@@ -38,21 +38,19 @@ function App() {
         if (localStorage.getItem('token')){
             const jwt = localStorage.getItem('token');
             auth.checkToken(jwt).then((res) => {
-                    if (res) {
                         if (res) {
                             setIsLoggedIn(true);
-                            setEmail(res.data.email)
+                            setEmail(res.email)
                             navigate("/", {replace: true})
                             Promise.all([api.getInitialCards(), api.getUserInfo()])
                                 .then(([initialCards, user]) => {
-                                    setCards(initialCards);
+                                    setCards(initialCards.reverse());
                                     setCurrentUser(user)
                                 })
                                 .catch((err) => {
                                     console.log(`Ошибка загрузки карточек:\n ${err.status} \n ${err.text}`);
                                 });
                         }
-                    }
                 }
             )
         }
@@ -70,7 +68,6 @@ function App() {
         setIsEditProfilePopupOpen(true)
     }
     function handleAddPlaceClick () {
-        console.log(12345)
         setIsAddPlacePopupOpen(true)
     }
     function handleDeletePopupClick (id) {
@@ -94,7 +91,7 @@ function App() {
 
     function handleCardLike(card) {
 
-        const isLiked = card.likes.some(i => i._id === currentUser._id);
+        const isLiked = card.likes.some(i => i === currentUser._id);
         api.changeLikeCardStatus(card._id, !isLiked)
             .then((newCard) => {
                 setCards((state) => state.map((c) => c._id === card._id ? newCard : c));
@@ -179,7 +176,7 @@ function App() {
                     navigate("/", {replace: true})
                 }
             })
-            .catch(err => {
+            .catch(_err => {
                 setIsSuccess(false);
                 setIsInfoTooltipPopupOpen(true);
             })

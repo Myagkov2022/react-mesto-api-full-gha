@@ -87,9 +87,9 @@ class Api {
 
 }
  const api = new Api({
-    baseUrl: 'https://api.mesto.myagkov.nomoreparties.co',
+    baseUrl: 'http://localhost:3001',
     headers: {
-        //authorization: '99b2bcc6-25fe-4291-8b2c-66936ebd5efe',
+        authorization:   `Bearer ${localStorage.getItem('token')}`,
         'Content-Type': 'application/json'
     }
 });
