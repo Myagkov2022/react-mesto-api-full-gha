@@ -39,6 +39,7 @@ function App() {
             const jwt = localStorage.getItem('token');
             auth.checkToken(jwt).then((res) => {
                         if (res) {
+                            api.headers.authorization=  `Bearer ${localStorage.getItem('token')}`
                             setIsLoggedIn(true);
                             setEmail(res.email)
                             navigate("/", {replace: true})
